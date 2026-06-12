@@ -11,13 +11,5 @@ steps:
 - name: Install PostgreSQL client
 run: sudo apt-get update && sudo apt-get install -y postgresql-client
 
-- name: Create backup
-env:
-PGPASSWORD: ${{ secrets.DB_PASSWORD }}
-run: pg_dump -h ${{ secrets.DB_HOST }} -U postgres -d postgres -F c -f backup.dump
-
-- name: Upload backup artifact
-uses: actions/upload-artifact@v4
-with:
-name: supabase-backup
-path: backup.dump
+- name: Test step
+run: echo "workflow works"
