@@ -8,5 +8,5 @@ backup:
 runs-on: ubuntu-latest
 
 steps:
-- name: Test step
-run: echo "workflow works"
+- name: Test
+run: echo "workflow is working"
